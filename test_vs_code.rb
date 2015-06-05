@@ -54,7 +54,7 @@ def read_file(filename)
     while (line = infile.gets)
       value = parse_line(line)
       if value
-        times << parse_line(line)
+        times << value
       end
     end
   end
