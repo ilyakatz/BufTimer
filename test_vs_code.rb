@@ -31,13 +31,13 @@ def read_day(date, filenames)
 
   filenames.each do |filename|
     values = read_file(filename)
-    total_test = values.collect{|n|
+    total_test += (values.collect{|n|
       n[:test]|| 0
-    }.compact.inject(:+)
+    }.compact.inject(:+) || 0)
 
-    total_code = values.collect{|n|
+    total_code += ( values.collect{|n|
       n[:code]|| 0
-    }.compact.inject(:+)
+    }.compact.inject(:+) || 0 )
   end
 
   {
